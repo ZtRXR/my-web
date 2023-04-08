@@ -3,6 +3,7 @@ import App from "./App.vue";
 import HelloWorld from "./components/HelloWorld.vue";
 import Main from "./components/Main.vue";
 import introduce from "./components/Introduce.vue";
+import future from "./components/future.vue";
 
 const router = createRouter({
     history:createWebHashHistory(),
@@ -24,6 +25,11 @@ const router = createRouter({
                     component: introduce,
                     name: 'introduce',
                 },
+                {
+                    path: 'future',
+                    component: future,
+                    name: 'future',
+                }
             ]
         },
 

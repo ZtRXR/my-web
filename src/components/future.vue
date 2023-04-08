@@ -1,11 +1,9 @@
 <template>
-
+    <el-calendar v-model="value" />
 </template>
 
-<script>
-export default {
-    name: "future"
-}
+<script setup>
+
 </script>
 
 <style scoped>
