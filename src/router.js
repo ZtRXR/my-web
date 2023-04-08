@@ -4,6 +4,7 @@ import HelloWorld from "./components/HelloWorld.vue";
 import Main from "./components/Main.vue";
 import introduce from "./components/Introduce.vue";
 import future from "./components/future.vue";
+import tool from "./components/tool.vue";
 
 const router = createRouter({
     history:createWebHashHistory(),
@@ -29,7 +30,12 @@ const router = createRouter({
                     path: 'future',
                     component: future,
                     name: 'future',
-                }
+                },
+                {
+                   path: 'tools',
+                    component: tool,
+                    name: 'tools'
+                },
             ]
         },
 
