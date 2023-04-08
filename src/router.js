@@ -2,6 +2,7 @@ import {createRouter,createWebHashHistory} from "vue-router";
 import App from "./App.vue";
 import HelloWorld from "./components/HelloWorld.vue";
 import Main from "./components/Main.vue";
+import introduce from "./components/Introduce.vue";
 
 const router = createRouter({
     history:createWebHashHistory(),
@@ -19,7 +20,9 @@ const router = createRouter({
                     name: 'HelloWorld',
                 },
                 {
-
+                    path: 'introduce',
+                    component: introduce,
+                    name: 'introduce',
                 },
             ]
         },

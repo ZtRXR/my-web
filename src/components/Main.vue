@@ -1,12 +1,12 @@
 <template>
     <div class="common-layout">
         <el-container>
-            <el-header><el-row>
-                <el-col :span="24">
-                    <el-button type="success" plain @click="">Zengtudor</el-button>
-                    <el-button type="primary">Primary</el-button>
-                </el-col>
-            </el-row></el-header>
+            <el-header>
+                <el-row class="mb-4">
+                    <el-button type="success" plain><router-link to="introduce">网站介绍</router-link></el-button>
+                    <el-button type="success" plain>待开发</el-button>
+                </el-row>
+            </el-header>
             <el-main>
                 <router-view></router-view>
             </el-main>
@@ -15,10 +15,8 @@
     </div>
 </template>
 
-<script>
-export default {
-    name: "Main"
-}
+<script setup>
+
 </script>
 
 <style scoped>
