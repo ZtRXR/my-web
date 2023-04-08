@@ -2,9 +2,10 @@
     <div class="common-layout">
         <el-container>
             <el-header>
-                <el-row class="mb-4 ztop">
+                <el-row class="mb-auto ztop">
                     <router-link to="introduce"><el-button type="success" plain>网站介绍</el-button></router-link>
-                    <router-link to="future"><el-button type="success" plain>待开发</el-button></router-link>
+                    <router-link to="future"><el-button type="success" plain>敬请期待</el-button></router-link>
+                    <router-link to="tools"><el-button type="success" plain>工具集</el-button> </router-link>
                 </el-row>
             </el-header>
             <el-divider />
@@ -12,7 +13,16 @@
                 <router-view></router-view>
             </el-main>
             <el-divider />
-            <el-footer>Footer</el-footer>
+            <el-footer>
+                <el-space direction="vertical">
+                    <el-text>
+                        <el-icon>
+                            <ElementPlus />
+                        </el-icon>
+                        网站制作者：曾子愚   |   技术使用：Vite 、Vue 、 Element-Plus ... 模板参考开发
+                    </el-text>
+                </el-space>
+            </el-footer>
         </el-container>
     </div>
 </template>
@@ -22,7 +32,15 @@
 </script>
 
 <style scoped>
-.ztop router-link{
+.ztop *{
     margin-left: 10px;
 }
+.el-header {
+    display: flex;
+    align-items: center; /* 垂直居中 */
+}
+.el-row {
+    padding: 0;
+}
+
 </style>
