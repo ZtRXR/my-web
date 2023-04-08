@@ -4,7 +4,9 @@ import HelloWorld from "./components/HelloWorld.vue";
 import Main from "./components/Main.vue";
 import introduce from "./components/Introduce.vue";
 import future from "./components/future.vue";
-import tool from "./components/tool.vue";
+import tool from "./components/tools/tool.vue";
+import toolsMain from './components/tools-main.vue'
+import toLowerCase from './components/tools/toLowerCase.vue'
 
 const router = createRouter({
     history:createWebHashHistory(),
@@ -32,9 +34,22 @@ const router = createRouter({
                     name: 'future',
                 },
                 {
-                   path: 'tools',
-                    component: tool,
-                    name: 'tools'
+                    path: '/tools',
+                    component: toolsMain,
+                    name: 'tools-main',
+                    redirect: '/tools/main',
+                    children:[
+                        {
+                            path: 'main',
+                            component: tool,
+                            name: 'tools'
+                        },
+                        {
+                            path: 'toLowerCase',
+                            component: toLowerCase,
+                            name: 'toLowerCase'
+                        }
+                    ],
                 },
             ]
         },

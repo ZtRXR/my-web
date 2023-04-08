@@ -3,9 +3,9 @@
         <el-container>
             <el-header>
                 <el-row class="mb-auto ztop">
-                    <router-link to="introduce"><el-button type="success" plain>网站介绍</el-button></router-link>
-                    <router-link to="future"><el-button type="success" plain>敬请期待</el-button></router-link>
-                    <router-link to="tools"><el-button type="success" plain>工具集</el-button> </router-link>
+                    <router-link to="/introduce"><el-button :type='topBarType' plain>网站介绍</el-button></router-link>
+                    <router-link to="/tools"><el-button :type='topBarType' plain>工具集</el-button> </router-link>
+                    <router-link to="/future"><el-button :type='topBarType' plain>敬请期待</el-button></router-link>
                 </el-row>
             </el-header>
             <el-divider />
@@ -28,12 +28,13 @@
 </template>
 
 <script setup>
-
+import {ElementPlus} from "@element-plus/icons-vue";
+let topBarType='primary'
 </script>
 
 <style scoped>
 .ztop *{
-    margin-left: 10px;
+    margin-left: 2px;
 }
 .el-header {
     display: flex;
