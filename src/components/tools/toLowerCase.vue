@@ -8,7 +8,7 @@
             }"
             :rows="2"
             type="textarea"
-            placeholder="请输入大写字母"
+            placeholder="请输入"
     />
     <el-button class="btOK" type="success" @click="tolo()">转换为小写</el-button>
     <el-button class="btOK" type="success" @click="toup()">转换为大写</el-button>

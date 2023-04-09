@@ -18,6 +18,12 @@
 <script setup>
 const tableData = [
     {
+        name: '笔顺码字典',
+        about: '一个由武大老物理系的相关人员出版的《笔顺码字典》的线上化。',
+        isRt: true,
+        address: 'bsmzd'
+    },
+    {
         name: '英文转小写',
         about: '用于AI绘画时转换大小写',
         address: 'toLowerCase',

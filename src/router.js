@@ -7,6 +7,8 @@ import future from "./components/future.vue";
 import tool from "./components/tools/tool.vue";
 import toolsMain from './components/tools-main.vue'
 import toLowerCase from './components/tools/toLowerCase.vue'
+import bsmzd from "./components/tools/bsmzd.vue";
+import bsmzdMain from './components/tools/bsmzd/main.vue'
 
 const router = createRouter({
     history:createWebHashHistory(),
@@ -48,7 +50,20 @@ const router = createRouter({
                             path: 'toLowerCase',
                             component: toLowerCase,
                             name: 'toLowerCase'
-                        }
+                        },
+                        {
+                            path: 'bsmzd',
+                            component: bsmzd,
+                            name: 'bsmzd',
+                            redirect: '/tools/bsmzd/main',
+                            children: [
+                                {
+                                    path: 'main',
+                                    component: bsmzdMain,
+                                    name: bsmzdMain,
+                                }
+                            ]
+                        },
                     ],
                 },
             ]
