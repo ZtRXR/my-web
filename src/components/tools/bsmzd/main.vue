@@ -24,12 +24,29 @@
 
 <script setup>
 import {ref} from "vue";
+import router from "../../../router.js";
+import {ElMessage} from "element-plus";
 let iText=ref('');
 let fTS = ref('bsm');
 
 function search(){
-    // console.log('text',iText.value,'fts',fTS.value);
+    const w = iText.value
+    const fuc = fTS.value
 
+    // 正则表达式，匹配只包含小写字母的字符串
+    const pattern = /^[a-z]+$/;
+    const hzp = /^[\u4e00-\u9fa5]+$/;
+
+    if (pattern.test(w)&&fTS.value==='bsm'||hzp.test(w)&& fTS.value==='hz') {
+        // 如果输入的文本只包含小写字母，则执行以下逻辑
+        router.push({ name: 'bsmzdSearch', params: { w, fuc }});
+    } else {
+        // 如果输入的文本包含其他字符，则执行以下逻辑
+        ElMessage({
+            message: '输入的文本必须只包含小写字母 或者 只包含汉字 并且选择正确的模式',
+            type: 'warning',
+        })
+    }
 }
 
 </script>

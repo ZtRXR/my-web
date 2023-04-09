@@ -8,8 +8,10 @@ import tool from "./components/tools/tool.vue";
 import toolsMain from './components/tools-main.vue'
 import toLowerCase from './components/tools/toLowerCase.vue'
 import bsmzd from "./components/tools/bsmzd.vue";
-import bsmzdMain from './components/tools/bsmzd/main.vue'
-import bsmzdSearch from './components/tools/bsmzd/search.vue'
+import bsmzdMain from './components/tools/bsmzd/main.vue';
+import bsmzdSearch from './components/tools/bsmzd/search.vue';
+import bsmzdId from './components/tools/bsmzd/id.vue'
+import bsmzdAbout from './components/tools/bsmzd/about.vue'
 
 const router = createRouter({
     history:createWebHashHistory(),
@@ -64,9 +66,19 @@ const router = createRouter({
                                     name: 'bsmzdMain',
                                 },
                                 {
-                                    path: 'search',
+                                    path: `search/:w/:fuc`,
                                     component: bsmzdSearch,
                                     name: 'bsmzdSearch'
+                                },
+                                {
+                                    path: 'id/:id',
+                                    component:bsmzdId,
+                                    name: 'bsmzdId'
+                                },
+                                {
+                                    path:'about',
+                                    component: bsmzdAbout,
+                                    name: 'bsmzdAbout',
                                 }
                             ]
                         },
