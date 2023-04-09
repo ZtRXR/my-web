@@ -34,6 +34,14 @@ let activities = [
         timestamp: 'Future'
     },
     {
+        content: '开始用Vue重构《笔顺码字典》线上查询工具',
+        timestamp: '2023-04-09',
+    },
+    {
+      content: '工具箱里更新了一个demo工具《单词大小写转换》作为测试',
+      timestamp: '2023-04-08',
+    },
+    {
         content: '开始用新技术重新构建新网站',
         timestamp: '2023-04-08',
     },

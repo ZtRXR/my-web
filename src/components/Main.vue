@@ -33,6 +33,9 @@ let topBarType='primary'
 </script>
 
 <style scoped>
+.el-divider {
+    margin: 5px 0;
+}
 .ztop *{
     margin-left: 2px;
 }

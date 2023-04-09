@@ -9,6 +9,7 @@ import toolsMain from './components/tools-main.vue'
 import toLowerCase from './components/tools/toLowerCase.vue'
 import bsmzd from "./components/tools/bsmzd.vue";
 import bsmzdMain from './components/tools/bsmzd/main.vue'
+import bsmzdSearch from './components/tools/bsmzd/search.vue'
 
 const router = createRouter({
     history:createWebHashHistory(),
@@ -60,7 +61,12 @@ const router = createRouter({
                                 {
                                     path: 'main',
                                     component: bsmzdMain,
-                                    name: bsmzdMain,
+                                    name: 'bsmzdMain',
+                                },
+                                {
+                                    path: 'search',
+                                    component: bsmzdSearch,
+                                    name: 'bsmzdSearch'
                                 }
                             ]
                         },
