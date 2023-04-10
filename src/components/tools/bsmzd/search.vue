@@ -4,7 +4,7 @@
             <!--            <template #header>-->
             <div class="card-header">
                 <span>{{ item.hz }}</span>
-                <el-button class="button" @click="aboutId(item.id)" text>详情</el-button>
+                <el-button class="button" @click="aboutId(item.id)" plain>详情</el-button>
             </div>
             <!--            </template>-->
         </el-card>
@@ -63,7 +63,7 @@ async function flushans(){
     }
     ret = ret.arr;
     ans.value=ret;
-    console.log(ans.value,ret);
+    // console.log(ans.value,ret);
     loading.value=false;
 }
 flushans()

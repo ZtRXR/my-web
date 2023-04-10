@@ -7,8 +7,11 @@
         </template>
         <div class="text item">
             <div>笔顺码：{{ret.bsm}}</div>
-            <div>解释：</div>
-            <div v-for="item in ret.pyJs">{{item}}</div>
+            <div>笔画：{{ret.fy}}</div>
+            <div v-for="(item,index) in ret.pyJs">
+                <el-divider v-if="index%2===0"/>
+                {{item}}
+            </div>
         </div>
     </el-card>
 </template>
@@ -43,12 +46,51 @@ async function load(){
         })
     }
     ret.value=ret.value.data;
+    ret.value.fy=Fy(ret.value.bsm)
 }
 load()
+
+const fy={
+    "a": "横",
+    "b": "横竖",
+    "c": "横竖横乙形",
+    "d": "横竖横竖",
+    "e": "横竖左勾",
+    "f": "横竖右勾",
+    "g": "横勾",
+    "h": "横撇",
+    "i": "横撇横撇",
+    "j": "横撇左弯勾",
+    "k": "竖",
+    "l": "竖横",
+    "m": "竖横竖，撇横撇",
+    "n": "竖横上勾",
+    "o": "竖左勾",
+    "p": "竖右勾|竖提",
+    "q": "撇",
+    "r": "横撇",
+    "s": "撇长点",
+    "t": "捺",
+    "u": "左弯勾",
+    "v": "右弯勾",
+    "w": "提",
+    "x": "提，捺",
+    "y": "左点",
+    "z": "右点"
+}
+
+function Fy(str){
+    let fyRet = "";
+    for(let i=0;i<str.length;i++){
+        fyRet = fyRet+fy[str[i]]+" | ";
+    }
+    return fyRet;
+}
 </script>
 
 <style scoped>
 .card-header{
     font-size: 50px;
 }
+
 </style>

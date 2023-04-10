@@ -3,8 +3,8 @@
         <el-text tag="b" size="large" class="title">笔顺码字典</el-text>
         <div class="mb-2 flex items-center text-sm" @keyup.enter="search">
             <el-radio-group v-model="fTS" class="ml-4">
-                <el-radio label="bsm" size="large">查询笔顺码</el-radio>
-                <el-radio label="hz" size="large">查询汉字</el-radio>
+                <el-radio label="bsm" size="large">输入笔顺码</el-radio>
+                <el-radio label="hz" size="large">输入汉字</el-radio>
             </el-radio-group>
             <div class="input-container">
                 <el-input
