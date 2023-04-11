@@ -92,7 +92,7 @@ flushans()
 }
 
 .box-card {
-    width: 150px;
+    width: 90px;
     margin: 2px 2px;
 }
 .card-header {
