@@ -9,6 +9,20 @@
             <!--            </template>-->
         </el-card>
     </el-row>
+    <div class="demo-pagination-block">
+        <el-pagination
+            v-model:current-page="currentPage3"
+            v-model:page-size="pageSize3"
+            :small="true"
+            :disabled="false"
+            :background="true"
+            layout="prev, pager, next, jumper"
+            :total="total"
+            @current-change="newAns"
+        />
+    </div>
+<!--    @size-change="handleSizeChange"-->
+
 </template>
 
 <script setup>
@@ -26,15 +40,20 @@ const fuc = params.fuc;
 let ans=ref([]);
 
 let loading = ref(true);
+let currentPage3 = ref(1);
+let pageSize3 = ref(30);
+let total = ref(0);
+let tans=[];
 
 function aboutId(id){
     // console.log(id)
-    router.push({
-        name: 'bsmzdId',
-        params:{
-            id: id,
-        }
-    });
+    window.open('/#/tools/bsmzd/id/'+id);
+    // router.push({
+    //     name: 'bsmzdId',
+    //     params:{
+    //         id: id,
+    //     }
+    // });
 }
 
 async function flushans(){
@@ -62,16 +81,33 @@ async function flushans(){
         })
     }
     ret = ret.arr;
-    ans.value=ret;
+    tans=ret;
     // console.log(ans.value,ret);
+    // console.log(ans.value)
+    total.value=tans.length;
+    newAns(currentPage3.value)
     loading.value=false;
 }
 flushans()
+function newAns(num){
+    // console.log(total.value,tans,num,tans.length/10)
+    let a=[];
+    for(let i=0;i<=pageSize3.value&&(num-1)*pageSize3.value+i<tans.length;i++){
+        a.push(tans[(num-1)*pageSize3.value+i])
+    }
+    ans.value=a;
+    // ans.value=tans;
+}
+
 
 // console.log(w);
 </script>
 
 <style scoped>
+.demo-pagination-block{
+    display: flex;
+    justify-content: center;
+}
 .parCard{
     display: flex;
     flex-wrap: wrap;
