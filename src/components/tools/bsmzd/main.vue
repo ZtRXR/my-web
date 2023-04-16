@@ -3,7 +3,8 @@
         <el-text tag="b" size="large" class="title">笔顺码字典</el-text>
         <div class="mb-2 flex items-center text-sm" @keyup.enter="search">
             <el-radio-group v-model="fTS" class="ml-4">
-                <el-radio label="bsm" size="large">输入笔顺码</el-radio>
+                <el-radio label="bsm" size="large">输入笔顺码 | 前部匹配</el-radio>
+                <el-radio label="bsmI" size="large">输入笔顺码 | 中部匹配</el-radio>
                 <el-radio label="hz" size="large">输入汉字</el-radio>
             </el-radio-group>
             <div class="input-container">
@@ -37,7 +38,7 @@ function search(){
     const pattern = /^[a-z]+$/;
     const hzp = /^[\u4e00-\u9fa5]+$/;
 
-    if (pattern.test(w)&&fTS.value==='bsm'||hzp.test(w)&& fTS.value==='hz') {
+    if (pattern.test(w)&&fTS.value==='bsm'||hzp.test(w)&& fTS.value==='hz'||pattern.test(w)&&fTS.value==='bsmI') {
         // 如果输入的文本只包含小写字母，则执行以下逻辑
         router.push({ name: 'bsmzdSearch', params: { w, fuc }});
     } else {
