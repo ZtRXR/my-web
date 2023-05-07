@@ -40,9 +40,19 @@ const tableData = [
         address: 'https://blog.zziyu.top'
     },
     {
-        name: '文件管理系统',
-        about: '我的私人文件管理系统，一般不对外开放',
-        address: 'https://file.zziyu.top:81'
+        name: 'ISO分享',
+        about: '分享常用ISO文件',
+        address: 'https://file.zziyu.top:81/#s/9Pl9De-Q'
+    },
+    {
+      name: 'AI画图分享',
+      about: '本人自行创作的AI画廊',
+      address: 'https://file.zziyu.top:81/#s/9Pl9w8bw',
+    },
+    {
+        name: '软件库分享',
+        about: '常用软件分享',
+        address: 'https://file.zziyu.top:81/#s/9Pl-zjBg',
     },
 ];
 </script>
